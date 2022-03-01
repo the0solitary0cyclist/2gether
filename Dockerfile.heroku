@@ -12,4 +12,4 @@ ADD worker.rb worker.rb
 RUN gem install sinatra --no-ri --no-rdoc
 
 # Start Sinatra
-CMD ["ruby", "myapp.rb"]
+CMD ["ruby", "app.rb"]
