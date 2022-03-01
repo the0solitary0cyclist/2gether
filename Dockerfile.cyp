@@ -8,7 +8,7 @@ WORKDIR /
 COPY . .
 
 RUN sudo apt-get update \
-    && sudo apt-get --allow-releaseinfo-change-suite update
+    && sudo apt-get --allow-releaseinfo-change-suite update \
     && sudo apt-get install -y ruby-full ruby-dev build-essential \
     && gem install bundler --no-ri --no-rdoc \
     && bundle install \
