@@ -1,3 +1,4 @@
 it('should pass', () => {
-  expect(true).to.equal(false);
+  cy.visit('https://www.google.com');
+//   expect(true).to.equal(false);
 });
