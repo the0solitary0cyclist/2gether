@@ -7,13 +7,14 @@ WORKDIR /
 # ADD worker.rb worker.rb
 COPY . .
 
-RUN apt-get update \
-    && apt-get install -y ruby-full ruby-dev build-essential \
+RUN sudo apt-get update \
+    && sudo apt-get --allow-releaseinfo-change-suite update
+    && sudo apt-get install -y ruby-full ruby-dev build-essential \
     && gem install bundler --no-ri --no-rdoc \
     && bundle install \
-    && apt-get purge -y ruby-dev build-essential ruby-full \
-    && apt-get install -y ruby \
-    && apt-get clean && apt-get autoremove -y \
+    && sudo apt-get purge -y ruby-dev build-essential ruby-full \
+    && sudo apt-get install -y ruby \
+    && sudo apt-get clean && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Sinatra gem
