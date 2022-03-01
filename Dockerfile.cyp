@@ -7,6 +7,9 @@ WORKDIR /
 # ADD worker.rb worker.rb
 COPY . .
 
+RUN apt-get update && apt-get install -y ruby ruby-dev ruby-bundler build-essential
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 # Install Sinatra gem
 RUN gem install sinatra --no-ri --no-rdoc
 
