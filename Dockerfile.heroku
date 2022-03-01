@@ -5,7 +5,7 @@ FROM heroku/heroku:16
 WORKDIR /
 
 # Copy Sinatra app into container
-ADD myapp.rb myapp.rb
+ADD app.rb app.rb
 ADD worker.rb worker.rb
 
 # Install Sinatra gem
